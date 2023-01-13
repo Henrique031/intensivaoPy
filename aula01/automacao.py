@@ -1,9 +1,9 @@
-from itertools import count
-from statistics import mean
 import pyautogui
 import pyperclip
 import time
 import pandas as pd
+
+#pip install opencv-pythom # para o pythom ler alguma print na tela
 
 
 # pyautogui.press('nome da tecla') pressiona uma telcla
@@ -17,19 +17,24 @@ import pandas as pd
 # time.sleep(5) tempo que ficara dormindo
 
 # print(pyautogui.position()) #Comando para saber o posição do mouse
-pyautogui.PAUSE = 2
 
-# pyautogui.press("win")
-# time.sleep(2)
-# pyautogui.write("Microsoft Edge")
-# pyautogui.press("enter")
+# pyautogui.PAUSE = 2
+
+pyautogui.press("win")
+time.sleep(2)
+pyautogui.write("Microsoft Edge")
+pyautogui.press("enter")
 
 #Entrar no drive
+# contador = 0
+# while not pyautogui.locateOnScreen("drive.png", confidence=0.8):
+#     contador += 1
+#     time.sleep(1)
+#     print(contador)
 pyautogui.click(x=891, y=750)
 pyperclip.copy("https://drive.google.com/drive/folders/149xknr9JvrlEnhNWO49zPcw0PW5icxga")
 pyautogui.hotkey("ctrl", "v")
 pyautogui.press("enter")
-time.sleep(6)
 pyautogui.click(x=298, y=267, clicks=2 ) # extrato
 time.sleep(4)
 pyautogui.click(x=290, y=334) #click panilha
